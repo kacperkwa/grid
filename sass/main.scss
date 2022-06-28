@@ -1,0 +1,252 @@
+@import './colors';
+@import './animations';
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	// font-family: 'Cinzel', serif;
+	font-family: 'Raleway', sans-serif;
+	font-size: 1.6rem;
+	color: $white;
+	background-color: $dark;
+}
+h1.company-name {
+	margin-bottom: 0.5em;
+	font-size: 3rem;
+	font-family: 'Cinzel', serif;
+	text-transform: uppercase;
+	color: $gold;
+}
+.wrapper {
+	margin: 0 auto;
+	max-width: 1200px;
+	width: 100%;
+}
+.section-title {
+	position: relative;
+	margin: 0 auto 2em;
+	font-size: 3.2rem;
+	color: $gold;
+	width: fit-content;
+	font-weight: 200;
+	span {
+		font-weight: bold;
+	}
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: -2px;
+		width: 40px;
+		height: 2px;
+		background-color: $gold;
+	}
+}
+.nav {
+	&-mobile {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		justify-content: center;
+		transform: translateX(-102%);
+		background-color: $white;
+		&--active {
+			transform: translateX(0);
+		}
+	}
+	&-desktop {
+		display: none;
+	}
+	&__link {
+		position: relative;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: $dark;
+		margin: 0.5em;
+		padding: 0.5em;
+		font-size: 2.6rem;
+		transition: color 0.3s;
+		&:hover {
+			color: $gold;
+		}
+	}
+}
+
+.header {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	height: 100vh;
+	overflow: hidden;
+	.hamburger {
+		position: absolute;
+		padding: 2em;
+		z-index: 100;
+	}
+
+	&__text {
+		display: grid;
+		justify-content: center;
+		align-content: center;
+		text-align: center;
+		grid-row: 2/3;
+		grid-column: 1/3;
+		padding: 2em;
+		p {
+			font-weight: 200;
+		}
+	}
+
+	&__img {
+		grid-column: 1/3;
+		grid-row: 1/2;
+		width: 100%;
+		height: 100%;
+		background-image: url(../img/bitcoin.jpg);
+		background-position: center;
+		background-size: cover;
+		filter: sepia();
+	}
+	&__shadow {
+		grid: 1/3;
+		grid-row: 1/2;
+		background-color: rgba(0, 0, 0, 0.4);
+		width: 100%;
+		height: 100%;
+	}
+	&__bg-icon-one {
+		position: absolute;
+		width: 60%;
+		bottom: 2em;
+		right: -2em;
+		opacity: 0.05;
+		z-index: -100;
+		animation: spin-right 90s linear;
+	}
+	&__bg-icon-two {
+		display: none;
+	}
+	&__arrow {
+		display: none;
+	}
+}
+
+.cards {
+	background-color: $darker;
+	overflow: hidden;
+	&__box {
+		display: grid;
+		grid-template-columns: repeat(9, 1fr);
+		gap: 2em;
+		padding: 6em 2em;
+	}
+	&__card {
+		position: relative;
+		display: grid;
+		justify-items: center;
+		padding: 3em;
+		border: 1px solid transparent;
+		border-radius: 8px;
+		background-color: $dark;
+		transition: background-color 0.3s, border 0.3s;
+		&:hover {
+			background-color: $darker;
+			border: 1px solid $gold;
+		}
+		&:hover::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border: 1px solid $gold;
+			border-radius: 8px;
+
+			animation: pulse 0.7s linear;
+		}
+		img {
+			width: 60px;
+			margin-bottom: 1em;
+		}
+		h3 {
+			text-transform: uppercase;
+			margin-bottom: 1em;
+		}
+		p {
+			font-weight: 200;
+		}
+		&--one {
+			grid-column: 1/-1;
+			grid-row: 1/2;
+		}
+		&--two {
+			grid-column: 1/-1;
+			grid-row: 2/3;
+		}
+		&--three {
+			grid-column: 1/-1;
+			grid-row: 3/4;
+		}
+	}
+}
+
+.info {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	padding: 6em 2em;
+	&__title {
+		grid-column: 1/4;
+	}
+	&__boxes {
+		grid-column: 1/4;
+	}
+	&__box-img {
+		filter: sepia();
+		width: 100%;
+		object-fit: cover;
+		margin-bottom: 0.5em;
+	}
+	&__box {
+		margin-bottom: 2em;
+	}
+	&__box-title {
+		font-size: 2.6rem;
+		font-weight: 200;
+		margin-bottom: 0.5em;
+		color: $gold;
+	}
+	&__box-text {
+		margin-bottom: 0.5em;
+	}
+	&__box-link {
+		display: block;
+		text-decoration: none;
+		text-align: right;
+		font-weight: bold;
+		color: $gold;
+	}
+}
+
+@import './small';
+@import './medium';
+@import './large';

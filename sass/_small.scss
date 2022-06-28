@@ -1,0 +1,47 @@
+@media (min-width: 576px) {
+	.info {
+		&__title {
+			grid-column: 1/2;
+			padding: 0 1em;
+		}
+		&__boxes {
+			grid-column: 2/4;
+		}
+		&__box {
+			display: grid;
+			justify-content: end;
+		}
+		&__box-img,
+		&__box-text {
+			max-width: 500px;
+		}
+		&__bg-icon {
+			position: absolute;
+			display: block;
+			opacity: 0.05;
+			z-index: -5;
+			&--one {
+				width: 20%;
+				top: 14%;
+				animation: spin-right 160s infinite;
+			}
+			&--two {
+				width: 25%;
+				top: 85%;
+            animation: spin-right 160s infinite;
+			}
+			&--three {
+				width: 14%;
+				top: 40%;
+				left: -10%;
+            animation: spin-left 120s infinite;
+			}
+			&--four {
+				width: 40%;
+				top: 60%;
+				left: 20%;
+            animation: spin-right 140s infinite;
+			}
+		}
+	}
+}

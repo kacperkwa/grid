@@ -1,0 +1,93 @@
+@media (min-width: 992px) {
+	h1.company-name {
+		font-size: 6rem;
+	}
+	.header {
+		grid-template-rows: auto repeat(2, 1fr);
+
+		&__img {
+			background-image: url('../img/bitcoinbig.jpg');
+			grid-column: 2/3;
+			grid-row: 1/-1;
+		}
+		&__text {
+			grid-column: 1/2;
+			grid-row: 2/4;
+		}
+		&__bg-icon-one {
+			width: 10%;
+			left: 5em;
+			bottom: 3em;
+		}
+		&__bg-icon-two {
+			display: block;
+			position: absolute;
+			opacity: 0.05;
+			width: 5%;
+			top: 10em;
+			left: 35%;
+			animation: spin-left 90s linear;
+		}
+		&__arrow {
+			display: block;
+			position: absolute;
+			left: 49%;
+			bottom: 3em;
+			transform: translateX(-50%);
+			border: 1px solid $white;
+			border-radius: 50%;
+			padding: 1.5em;
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				border: 1px solid $white;
+				border-radius: 50%;
+				animation: pulse 2s infinite;
+			}
+		}
+		&__arrow-icon {
+			width: 50px;
+		}
+	}
+	.nav {
+		grid-column: 1/2;
+		grid-row: 1/2;
+		padding: 1em;
+
+		&-desktop {
+			display: block;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+			color: $white;
+			display: flex;
+			justify-content: center;
+		}
+		&__link {
+			font-size: 2.4rem;
+			color: $white;
+			border: 1px solid transparent;
+
+			&::before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				border: 1px solid $gold;
+				width: 100%;
+				height: 100%;
+				content: '';
+				opacity: 0;
+			}
+			&:hover::before {
+				animation: pulse 1s;
+			}
+		}
+	}
+	.hamburger {
+		display: none;
+	}
+}
