@@ -395,6 +395,33 @@ h1.company-name {
   color: #d6c78e;
 }
 
+.plans {
+  padding: 6em 2em;
+  background-color: #191919;
+}
+
+.plans__box {
+  margin: 2em 0;
+  padding: 2em 1em;
+  text-align: center;
+  background-color: #232323;
+  border-radius: 8px;
+}
+
+.plans__icon {
+  width: 60px;
+  margin-bottom: 1em;
+}
+
+.plans__item {
+  margin-bottom: 1.2em;
+}
+
+.plans__item-name {
+  color: #d6c78e;
+  font-size: 2.4rem;
+}
+
 @media (min-width: 576px) {
   .info__title {
     -ms-grid-column: 1;
@@ -475,6 +502,26 @@ h1.company-name {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1/2;
+  }
+  .plans {
+    padding: 10em 2em;
+  }
+  .plans__box {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .plans__item {
+    margin: 0 1em;
+  }
+  .plans__item-name {
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 

@@ -247,6 +247,29 @@ h1.company-name {
 	}
 }
 
+.plans {
+	padding: 6em 2em;
+	background-color: $darker;
+	&__box {
+		margin: 2em 0;
+		padding: 2em 1em;
+		text-align: center;
+		background-color: $dark;
+		border-radius: 8px;
+	}
+	&__icon {
+		width: 60px;
+		margin-bottom: 1em;
+	}
+	&__item {
+		margin-bottom: 1.2em;
+	}
+	&__item-name {
+		color: $gold;
+		font-size: 2.4rem;
+	}
+}
+
 @import './small';
 @import './medium';
 @import './large';
